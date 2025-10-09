@@ -4,7 +4,8 @@
  */
 
 /* Global Variables */
-
+var trainer = false;
+var count = 0;
 
 /** 
  * main  
@@ -14,7 +15,12 @@
  */
 /* Main */
 function main(){
-
+let again = (true);
+while (again == true) {
+        trainer = confirm("Trainer mode?");
+        playNim();
+        again = confirm("Play again?");        
+    }
 }
 
 /** 
@@ -24,7 +30,7 @@ function main(){
  * @return none
  */
 function playNim(){
-
+alert("Play nim");
 }
 
 /** 
