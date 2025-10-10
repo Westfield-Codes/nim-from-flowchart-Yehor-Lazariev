@@ -31,6 +31,15 @@ while (again == true) {
  */
 function playNim(){
 alert("Play nim");
+count = 0;
+while (count < 21) {
+        userTurn();
+        if (count > 20) alert("You lose!");
+        else {
+            cpuTurn();
+         if (count > 20) alert("You win!");
+        }
+    }
 }
 
 /** 
@@ -40,8 +49,18 @@ alert("Play nim");
  * @return none
  */
 function userTurn(){
-
+let turn = prompt ("Input number 1-3");
+turn = parseInt(turn);
+if (turn < 1 || turn > 3){
+    alert("Invalid input!")
+    userTurn();
 }
+    else {
+        count+=turn;
+        alert("Count is now" + count);
+    }
+}
+
 
 /** 
  * cpuTurn 
@@ -50,5 +69,5 @@ function userTurn(){
  * @return none
  */
 function cpuTurn(){
-
+count += 3;
 }
