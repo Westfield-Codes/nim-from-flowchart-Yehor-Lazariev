@@ -61,7 +61,6 @@ if (turn < 1 || turn > 3){
     }
 }
 
-
 /** 
  * cpuTurn 
  * Generate computer's turn without losing on purpose.  Different turns if trainer or simple.  
@@ -69,5 +68,12 @@ if (turn < 1 || turn > 3){
  * @return none
  */
 function cpuTurn(){
-count += 3;
+let turn = 0;
+if (count == 17) turn = 3;
+else if (count == 18) turn = 2;
+else if (count > 18) turn = 2;
+else if (!trainer) turn = 4 - count % 4;
+else turn = Math.floor(Math.random()*3)+1;
+count+= turn;
+alert("I counted " + turn + " count is now " + count);
 }
